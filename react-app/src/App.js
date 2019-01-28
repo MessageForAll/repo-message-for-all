@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./components/navBar";
+import Example from "./components/example";
 
 class App extends Component {
   render() {
-    return <NavBar />;
+    return <Example />;
   }
 }
 
