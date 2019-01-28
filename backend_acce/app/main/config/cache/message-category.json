@@ -1,0 +1,5 @@
+{
+	"error_connect" : "Erro: Não foi possivel realizar a conexão com o banco de dados.",
+    "error_record" : "Erro: Não foi possivel gravar o documento.",
+    "error_data" : "Erro: Não é possivel gravar o documento sem conteudo."
+}

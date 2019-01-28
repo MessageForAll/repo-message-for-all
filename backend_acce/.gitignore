@@ -1,0 +1,10 @@
+config/keys/
+log/
+.scannerwork/
+etc/
+*.pyc
+nohup.out
+.vscode
+nosetests.xml
+coverage.xml
+.coverage

@@ -1,0 +1,441 @@
+{
+	"id": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+	"name": "PAV-Testes",
+	"description": "",
+	"order": [
+		"422356e8-0a84-6869-607e-be277c29327c",
+		"f7b89f88-2e74-5ab1-135c-ba75fe066782"
+	],
+	"folders": [
+		{
+			"name": "Gravar Conteudo",
+			"description": "Envia o conteudo a ser gravado",
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"order": [
+				"60f2e8a9-8a1c-92ef-350f-1e8031a9bf98",
+				"8c49ddbc-41cb-948a-d597-9d4900bceb35"
+			],
+			"owner": "5415622",
+			"folder": "046b0970-08f8-dd68-86ed-a829f8848b3d",
+			"folders_order": [],
+			"id": "62c0a4b6-4b83-977e-b82a-cfb35d58d77f"
+		},
+		{
+			"owner": "5415622",
+			"lastUpdatedBy": "5415622",
+			"lastRevision": 4983226222,
+			"folder": null,
+			"id": "046b0970-08f8-dd68-86ed-a829f8848b3d",
+			"name": "Mocks",
+			"description": "",
+			"variables": null,
+			"auth": null,
+			"events": null,
+			"order": [],
+			"folders_order": [
+				"fcf35da7-f6da-cc6c-6893-fe9bdfc92a02",
+				"62c0a4b6-4b83-977e-b82a-cfb35d58d77f"
+			],
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f"
+		},
+		{
+			"name": "Verificar Conteudo",
+			"description": "Verifica o conteudo gravado.",
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"order": [
+				"97b556d1-33e5-82ba-af81-91546df2c37b",
+				"f132eae4-49b3-a12f-5e13-b96e51f43865"
+			],
+			"owner": "5415622",
+			"folder": "046b0970-08f8-dd68-86ed-a829f8848b3d",
+			"folders_order": [],
+			"id": "fcf35da7-f6da-cc6c-6893-fe9bdfc92a02"
+		}
+	],
+	"folders_order": [
+		"046b0970-08f8-dd68-86ed-a829f8848b3d"
+	],
+	"timestamp": 1539885650350,
+	"owner": "5415622",
+	"public": false,
+	"requests": [
+		{
+			"id": "422356e8-0a84-6869-607e-be277c29327c",
+			"headers": "msisdn-reclamado: 22223333\nclient-name: Joao\nprotocolo: 123\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "msisdn-reclamado",
+					"value": "22223333",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client-name",
+					"value": "Joao",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "protocolo",
+					"value": "123",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "pav-oi-swarm-prd-elb-1130320228.sa-east-1.elb.amazonaws.com:8081/client/dialog",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1539885586029,
+			"name": "pav-oi SP",
+			"description": null,
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "88ade2f5-6a53-7c78-3b71-ba04178a6770",
+			"rawModeData": "{\r\n  \"request\": {\r\n    \"session\": \"atma01\",\r\n    \"transcript\": \"minha internet esta ruim\",\r\n    \"confidence\": 0.7,\r\n    \"datetime_inicio\": \"2018-09-30-18:18:12\",\r\n    \"datetime_final\": \"2018-09-30-18:18:15\",\r\n    \"msisdn-reclamado\": \"011998765432\"\r\n  }\r\n}"
+		},
+		{
+			"id": "60f2e8a9-8a1c-92ef-350f-1e8031a9bf98",
+			"headers": "Authorization: b123\nContent-Type: application/json\ngravar: sim\nmsisdn: 2125546050\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "b123",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "gravar",
+					"value": "sim",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "msisdn",
+					"value": "2125546050",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "pav-oi-swarm-prd-elb-1130320228.sa-east-1.elb.amazonaws.com:9000",
+			"folder": "62c0a4b6-4b83-977e-b82a-cfb35d58d77f",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1540320135979,
+			"name": "CCI-SP",
+			"description": null,
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"responses": [
+				{
+					"owner": "5415622",
+					"lastUpdatedBy": "5415622",
+					"lastRevision": 4983135079,
+					"request": "60f2e8a9-8a1c-92ef-350f-1e8031a9bf98",
+					"id": "43cf8ce4-f192-1429-03a2-d84ce7408a1f",
+					"name": "Default",
+					"status": "200",
+					"responseCode": {
+						"code": 200,
+						"name": ""
+					},
+					"time": null,
+					"headers": null,
+					"cookies": null,
+					"mime": null,
+					"text": "Ok",
+					"language": null,
+					"rawDataType": null,
+					"requestObject": "{\"url\":\"{{url}}/\",\"method\":\"GET\",\"data\":\"\",\"dataMode\":\"raw\"}",
+					"createdAt": "2018-09-21T01:18:58.000Z",
+					"updatedAt": "2018-09-21T01:18:58.000Z",
+					"write": true
+				}
+			],
+			"rawModeData": "{\n    \"idOrdem\": 3456,\n    \"idEventRec\": 1,\n    \"eventNumber\": \"4733-09-2016\",\n    \"forecastDate\": \"2016-09-13T00:47:48-03:00\",\n    \"initialDate\": \"2016-09-12T18:47:48-03:00\",\n    \"endDate\": \"31/07/2016\",\n    \"requestDateREC\": \"2016-10-10T14:06:28-03:00\",\n    \"resultDateREC\": \"2016-10-10T14:06:28-03:00\",\n    \"descrEventType\": \"EXISTE EVENTO DE INTERRUPCAO NAO PROGRAMADA\",\n    \"result\": \"OK\",\n    \"msg\": \"Sucesso\"\n}"
+		},
+		{
+			"id": "8c49ddbc-41cb-948a-d597-9d4900bceb35",
+			"headers": "Authorization: b123\nContent-Type: application/json\ngravar: sim\nmsisdn: 2125546050\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "b123",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "gravar",
+					"value": "sim",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "msisdn",
+					"value": "2125546050",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "pav-oi-dkr-swarm-classic-elb-297196066.us-west-2.elb.amazonaws.com:9000",
+			"folder": "62c0a4b6-4b83-977e-b82a-cfb35d58d77f",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1540320132298,
+			"name": "CCI-US",
+			"description": null,
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"responses": [
+				{
+					"owner": "5415622",
+					"lastUpdatedBy": "5415622",
+					"lastRevision": 4983135079,
+					"request": "8c49ddbc-41cb-948a-d597-9d4900bceb35",
+					"id": "11a6ac79-0b43-40ad-689c-f9eebd09d955",
+					"name": "Default",
+					"status": "200",
+					"responseCode": {
+						"code": 200,
+						"name": ""
+					},
+					"time": null,
+					"headers": null,
+					"cookies": null,
+					"mime": null,
+					"text": "Ok",
+					"language": null,
+					"rawDataType": null,
+					"requestObject": "{\"url\":\"{{url}}/\",\"method\":\"GET\",\"data\":\"\",\"dataMode\":\"raw\"}",
+					"createdAt": "2018-09-21T01:18:58.000Z",
+					"updatedAt": "2018-09-21T01:18:58.000Z",
+					"write": true
+				}
+			],
+			"rawModeData": "{\n    \"idOrdem\": 3456,\n    \"idEventRec\": 1,\n    \"eventNumber\": \"4733-09-2016\",\n    \"forecastDate\": \"2016-09-13T00:47:48-03:00\",\n    \"initialDate\": \"2016-09-12T18:47:48-03:00\",\n    \"endDate\": \"31/07/2016\",\n    \"requestDateREC\": \"2016-10-10T14:06:28-03:00\",\n    \"resultDateREC\": \"2016-10-10T14:06:28-03:00\",\n    \"descrEventType\": \"EXISTE EVENTO DE INTERRUPCAO NAO PROGRAMADA\",\n    \"result\": \"OK\",\n    \"msg\": \"Sucesso\"\n}"
+		},
+		{
+			"id": "97b556d1-33e5-82ba-af81-91546df2c37b",
+			"headers": "Authorization: b123\nContent-Type: application/json\nmsisdn: 2125546050\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "b123",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "msisdn",
+					"value": "2125546050",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "pav-oi-swarm-prd-elb-1130320228.sa-east-1.elb.amazonaws.com:9100",
+			"folder": "fcf35da7-f6da-cc6c-6893-fe9bdfc92a02",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1540320148490,
+			"name": "STC_SAC-SP",
+			"description": null,
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"responses": [
+				{
+					"owner": "5415622",
+					"lastUpdatedBy": "5415622",
+					"lastRevision": 4983135079,
+					"request": "97b556d1-33e5-82ba-af81-91546df2c37b",
+					"id": "972182c4-f30d-1cfd-157f-95c27d6d7e32",
+					"name": "Default",
+					"status": "200",
+					"responseCode": {
+						"code": 200,
+						"name": ""
+					},
+					"time": null,
+					"headers": null,
+					"cookies": null,
+					"mime": null,
+					"text": "Ok",
+					"language": null,
+					"rawDataType": null,
+					"requestObject": "{\"url\":\"{{url}}/\",\"method\":\"GET\",\"data\":\"\",\"dataMode\":\"raw\"}",
+					"createdAt": "2018-09-21T01:18:58.000Z",
+					"updatedAt": "2018-09-21T01:18:58.000Z",
+					"write": true
+				}
+			],
+			"rawModeData": ""
+		},
+		{
+			"id": "f132eae4-49b3-a12f-5e13-b96e51f43865",
+			"headers": "Authorization: b123\nContent-Type: application/json\nmsisdn: 2125546050\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "b123",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "msisdn",
+					"value": "2125546050",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://pav-oi-dkr-swarm-classic-elb-297196066.us-west-2.elb.amazonaws.com:9100",
+			"folder": "fcf35da7-f6da-cc6c-6893-fe9bdfc92a02",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1540320153818,
+			"name": "STC_SAC-US",
+			"description": null,
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"responses": [
+				{
+					"owner": "5415622",
+					"lastUpdatedBy": "5415622",
+					"lastRevision": 4983135079,
+					"request": "f132eae4-49b3-a12f-5e13-b96e51f43865",
+					"id": "cfeb3960-f3f3-17f6-fc13-d7685fcc468b",
+					"name": "Default",
+					"status": "200",
+					"responseCode": {
+						"code": 200,
+						"name": ""
+					},
+					"time": null,
+					"headers": null,
+					"cookies": null,
+					"mime": null,
+					"text": "Ok",
+					"language": null,
+					"rawDataType": null,
+					"requestObject": "{\"url\":\"{{url}}/\",\"method\":\"GET\",\"data\":\"\",\"dataMode\":\"raw\"}",
+					"createdAt": "2018-09-21T01:18:58.000Z",
+					"updatedAt": "2018-09-21T01:18:58.000Z",
+					"write": true
+				}
+			],
+			"rawModeData": ""
+		},
+		{
+			"id": "f7b89f88-2e74-5ab1-135c-ba75fe066782",
+			"headers": "msisdn-reclamado: 22223333\nclient-name: Joao\nprotocolo: 123\nContent-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "msisdn-reclamado",
+					"value": "22223333",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "client-name",
+					"value": "Joao",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "protocolo",
+					"value": "123",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "pav-oi-dkr-swarm-classic-elb-297196066.us-west-2.elb.amazonaws.com:8081/client/dialog",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1539885408833,
+			"name": "pav-oi US",
+			"description": null,
+			"collectionId": "70ee907a-23df-eab1-80b9-e35f07d8f61f",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "c00fd5fd-f2cd-631b-156c-6f3d1069ac46",
+			"rawModeData": "{\r\n  \"request\": {\r\n    \"session\": \"atma01\",\r\n    \"transcript\": \"gostaria da minha conta\",\r\n    \"confidence\": 0.7,\r\n    \"datetime_inicio\": \"2018-09-30-18:18:12\",\r\n    \"datetime_final\": \"2018-09-30-18:18:15\",\r\n    \"msisdn-reclamado\": \"011998765432\"\r\n  }\r\n}"
+		}
+	]
+}

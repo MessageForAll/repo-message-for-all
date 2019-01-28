@@ -1,0 +1,14 @@
+{
+"R1":
+    {
+    "QuestionarConta": "1111111111",
+    "CancelarLinhaOuProduto": "2222222222",
+    "Default":"3333333333"
+    },
+"R2":
+    {
+    "QuestionarConta": "4444444444",
+    "CancelarLinhaOuProduto": "5555555555",
+    "Default":"6666666666"
+    }
+}

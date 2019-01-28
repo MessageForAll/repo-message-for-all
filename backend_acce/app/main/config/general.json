@@ -1,0 +1,87 @@
+{
+    "environment": "DEV",
+    "log-config-file-dev": "log-config-dev.ini",
+    "log-config-file-prod": "log-config-prod.ini",
+    "nlu": {
+        "engine": "Watson-TEST",
+        "Watson": {
+            "apikey": "fZF5i4ytdkrIzb5rxa-1QqWKbEtP5mA2WEI9MdzesCEp",
+            "url": "https://gateway-syd.watsonplatform.net/assistant/api",
+            "version": "2018-07-10",
+            "workspace_id": "5833579e-5f8c-48a6-b00a-301e38dc2dae"
+        },
+        "Watson-DEV": {
+            "apikey": "fZF5i4ytdkrIzb5rxa-1QqWKbEtP5mA2WEI9MdzesCEp",
+            "url": "https://gateway-syd.watsonplatform.net/assistant/api",
+            "version": "2018-07-10",
+            "workspace_id": "4541b5a0-4182-480f-8faf-40b294e7127c"
+        },
+        "Watson-TEST": {
+            "url": "https://gateway.watsonplatform.net/assistant/api",
+            "version": "2018-07-10",
+            "workspace_id": "5833579e-5f8c-48a6-b00a-301e38dc2dae",
+            "workspace_id-feira": "05045e2d-e348-43b0-a05d-0f98698f9df6",
+            "username": "fd33f78e-3ec8-453e-94d8-b1fb47f0eaae",
+            "password": "VUvCEPFCQqAr"
+        }
+    },
+    "server": {
+        "host": "0.0.0.0",
+        "port": 8081
+    },
+    "redis-dev": {
+        "host": "localhost",
+        "port": 6379,
+        "password": ""
+    },
+    "redis-prod": {
+        "host": "pav_redis",
+        "port": 6379,
+        "old-password": "pavuser2018prdREDISDB",
+        "password": ""
+    },
+    "mongo-dev": {
+        "host": "localhost",
+        "port": 27017,
+        "dbname": "pav-mongo",
+        "user": "",
+        "password": ""
+    },
+    "mongo-prod": {
+        "host": "pav-oi_pav_mongo_1",
+        "dbname": "pav-mongo",
+        "user": "pavuser",
+        "password": "pav2018prdMONGODB",
+        "port": 27017
+    },
+    "elastic-dev": {
+        "host": "localhost",
+        "port": "9200",
+        "user": "elastic",
+        "password": "adcc2018",
+        "index": "pav"
+    },
+    "elastic-prod": {
+        "host": "52.25.204.77",
+        "port": "9200",
+        "user": "pav_user",
+        "password": "adcc2018prdELASTICSEARCHAPP",
+        "index": "pav"
+    },
+    "backend-oi-prod": {
+        "cci": {
+            "base-url": "http://pav-oi_pav_mock_cci_1",
+            "port": 9000,
+            "request-query-os": "VTTIntegrationWebservice/rs/rec/requestQueryOS",
+            "query-os": "VTTIntegrationWebservice/rs/rec/queryOS"
+        }
+    },
+    "backend-oi-dev": {
+        "cci": {
+            "base-url": "http://localhost",
+            "port": 9000,
+            "request-query-os": "VTTIntegrationWebservice/rs/rec/requestQueryOS",
+            "query-os": "VTTIntegrationWebservice/rs/rec/queryOS"
+        }
+    }
+}

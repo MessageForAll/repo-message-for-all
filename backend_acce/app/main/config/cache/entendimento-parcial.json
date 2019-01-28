@@ -1,0 +1,23 @@
+{
+
+    "confirmar":"Não entendi, pode repetir?|EntendParcial_Excecao_PodeRepetir",
+    "negar":"Não entendi, pode repetir?|EntendParcial_Excecao_PodeRepetir",
+    "ConfirmarHorarioProximo":"Você quer saber a previsão do retorno, é isso?|EntendParcial_confirmarHorarioProximo",
+    "PedirDesconto":"Você está com dúvidas sobre descontos na sua fatura, é isso?|EntendParcial_PedirDesconto",
+    "QuestionarLocalidade":"Você quer saber se o bairro foi afetado, é isso?|EntendParcial_QuestionarLocalidade",
+    "PedirUrgencia":"Você disse que tem urgência no retorno do serviço, é isso?|EntendParcial_PedirUrgencia",
+    "QuestionarFalhas":"Você quer saber sobre falhas que possam estar acontecendo, é isso?|EntendParcial_QuestionarFalhas",
+    "QuestionarAndamento":"Você quer falar sobre o andamento do reparo, é isso?|EntendParcial_QuestionarAndamento",
+    "SolicitarProtocolo":"Você quer o número do seu protocolo, é isso mesmo?|EntendParcial_SolicitarProtocolo",
+    "PedirTempo":"Precisa que eu aguarde um momento, é isso?|EntendParcial_Excecao_PedirTempo",
+    "ReclamarPrazo":"Você precisa saber o prazo de retorno, é isso?|EntendParcial_Prazo",
+    "saberPrazoNormalizacao":"Você quer saber sobre o prazo de normalização, é isso?|EntendParcial_saberPrazoNormalizacao",
+    "saberCausa":"Você perguntou sobre o motivo, é isso?|EntendParcial_saberCausa",
+    "solicitarVisitaTecnica":"Você quer pedir uma visita técnica, é isso?|EntendParcial_SolicitarVisitaTecnica",
+    "FalarAtendente":"Você quer que eu te transfira pra um outro atendente, é isso?|EntendParcial_Excecao_FalarComAtendente",
+    "silencio":"Não consegui te ouvir|EntendParcial_INI_RDM_01",
+    "ReclamarFrequencia":"Você está com dúvidas sobre a frequência do problema, é isso?|EntendParcial_ReclamarFrequencia",
+    "AmeacarCancelar":"Você quer cancelar o seu plano, é isso?|EntendParcial_AmeacarCancelar",
+    "CancelarLinhaOuProduto":"Você quer cancelar o seu plano, é isso?|EntendParcial_AmeacarCancelar",
+    "PedirRepetir":"Não entendi, pode repetir?|EntendParcial_Excecao_PodeRepetir"
+}
