@@ -1,0 +1,91 @@
+{
+    "verbio" : [ 
+        {
+            "request" : {
+                "session" : "2018082",
+                "transcription" : "hola",
+                "confidence" : 0.7
+            }
+        }
+    ],
+    "REQUEST_Context": [
+        {
+            "Conversation_id": 2018082,
+            "Context": {
+                "etapa": "welcome",
+                "time": "03:42",
+                "servico": "internet",
+                "conversation_id": "2018082",
+                "rpt": "0",
+                "system": {
+                    "dialog_stack": [
+                        {"dialog_node": "root"}],
+                    "dialog_turn_counter": 1,
+                    "dialog_request_counter": 1,
+                    "_node_output_map": {
+                        "node_10_1532701013835": {
+                            "0": [0, 1, 0]}
+                    }, 
+                    "branch_exited": "True",
+                    "branch_exited_reason": "completed"
+                },
+                "name": "João",
+                "timezone": "America/Sao_Paulo"}
+    }],
+    "Watson_Response": [
+        {
+            "intents": [
+                {"intent": "greet",
+                "confidence": 1}
+                ],
+            "entities": [],
+            "input": {"text": "hola"},
+            "output": {
+                "generic": [
+                    {"response_type": "text",
+                    "text": "Boa tarde, sou a Técnica Virtual Clarice. Falo com João?"}
+                    ],
+                "text": ["Boa tarde, sou a Técnica Virtual Clarice. Falo com João?"],
+                "nodes_visited": ["Bem-vindo", "node_10_1532701013835"],
+                "log_messages": []
+                },
+            "context": {
+                "conversation_id": "2018082",
+                "system": {
+                    "_node_output_map": {
+                        "node_10_1532701013835": {
+                            "0": [1, 1, 0]
+                            }
+                        },
+                    "dialog_request_counter": 2,
+                    "dialog_stack": [{"dialog_node": "root"}],
+                    "dialog_turn_counter": 2,
+                    "branch_exited": "True",
+                    "branch_exited_reason": "completed"
+                },
+                "servico": "internet",
+                "name": "João",
+                "time": "38:11",
+                "rpt": 0,
+                "timezone": "America/Sao_Paulo",
+                "etapa": "welcome"
+            }
+        }
+    ],
+    "RESPONSE_VERBIO": [
+        {
+            "answer": {
+                "grammar": "",
+                "next": "ask",
+                "question": [{
+                    "type": "tts",
+                    "transcript": "Boa tarde, sou a T\u00e9cnica Virtual Clarice. Falo com Jo\u00e3o?",
+                    "id": "ID_11_1"
+                    }
+                ],
+                "session": "2018082"
+                }
+        }
+    ]
+} 
+ 

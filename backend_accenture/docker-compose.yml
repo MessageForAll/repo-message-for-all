@@ -1,0 +1,43 @@
+version: '3.2'
+networks:
+  pav:
+    attachable: true
+services:
+
+  pav_api:
+    image: "pavapi"
+    build:
+      context: .
+      dockerfile: ./dockers/api/Dockerfile
+    env_file:
+      - "./config/aws-dev.env"
+    ports:
+      - 8081:8081
+    command: bash -c "./run.sh && python"
+    restart: 'always'
+    networks:
+      - pav
+  pav_mock_cci:
+    image: "mock_cci"
+    build:
+      context: .
+      dockerfile: ./dockers/cci/Dockerfile
+    ports:
+      - 9000:9000
+    command: bash -c "python mock_cci.py"
+    restart: 'always'
+    networks:
+      - pav
+  pav_mock_stc:
+    image: "mock_stc"
+    build:
+      context: .
+      dockerfile: ./dockers/stc/Dockerfile
+    ports:
+      - 9100:9100
+    command: bash -c "python mock_stc_sac.py"
+    restart: 'always'
+    networks:
+      - pav
+
+      

@@ -1,0 +1,111 @@
+{
+	"texts_audios": {
+		"Saudacao_RDM_01_BomDia": {
+			"type": "recording",
+			"transcript": "Suporte Técnico Oi, Atendente virtual Mari, bom dia… Com quem eu falo?",
+			"id": "Saudacao_RDM_01_BomDia"
+		},
+		"Saudacao_RDM_01_BoaTarde": {
+			"type": "recording",
+			"transcript": "Suporte Técnico Oi, Atendente virtual Mari, boa tarde… Com quem eu falo?",
+			"id": "Saudacao_RDM_01_BoaTarde"
+		},
+		"Saudacao_RDM_01_BoaNoite":{
+			"type": "recording",
+			"transcript": "Suporte Técnico Oi, Atendente virtual Mari, boa noite… Com quem eu falo?",
+			"id": "Saudacao_RDM_01_BoaNoite"
+		},
+		"Saudacao_RDM_01_Naoidentificou": {
+			"type": "recording",
+			"transcript": "Suporte Técnico Oi, Atendente virtual Mari, com quem eu falo?",
+			"id": "Saudacao_RDM_01_Naoidentificou"
+		},
+		"Saudacao_RDM_02_BomDia ": {
+			"type": "recording",
+			"transcript": "Bom  dia, você tá no suporte Técnico da Oi. Eu sou a atendente virtual Mari, com quem eu falo?",
+			"id": "Saudacao_RDM_02_BomDia "
+		},
+		"Saudacao_RDM_02_BoaTarde": {
+			"type": "recording",
+			"transcript": "Boa tarde, você tá no suporte Técnico da Oi. Eu sou a atendente virtual Mari, com quem eu falo?",
+			"id": "Saudacao_RDM_02_BoaTarde"
+		},
+		"Saudacao_RDM_02_BoaNoite": {
+			"type": "recording",
+			"transcript": "Boa noite, você tá no suporte Técnico da Oi. Eu sou a atendente virtual Mari, com quem eu falo?",
+			"id": "Saudacao_RDM_02_BoaNoite"
+		},
+		"Saudacao_RDM_02_NaoIdentificou": {
+			"type": "recording",
+			"transcript": "Olá, você tá no suporte Técnico da Oi. Eu sou a atendente virtual Mari, com quem eu falo?",
+			"id": "Saudacao_RDM_02_NaoIdentificou"
+		},
+		"ID_41_3": {		
+			"type": "recording",
+			"transcript": "Ok um momentinho enquanto busco suas informações.",
+			"id": "ID_41_3"
+		},
+		"ID_18_1": {		
+			"type": "recording",
+			"transcript": "Hummm poderia falar de novo?",
+			"id": "ID_18_1"
+		},
+		"ID_18_2": {		
+			"type": "recording",
+			"transcript": "Como? Não te ouvi bem.",
+			"id": "ID_18_2"
+		},
+		"ID_18_3": {		
+			"type": "recording",
+			"transcript": "Hummm Pode repetir por favor?",
+			"id": "ID_18_3"
+		},
+		"ID_18_4": {		
+			"type": "recording",
+			"transcript": "Hummm poderia falar de novo?",
+			"id": "ID_18_4"
+		},
+		"ID_18_5": {		
+			"type": "recording",
+			"transcript": "Hummm poderia falar de novo?",
+			"id": "ID_18_5"
+		},
+		"ID_18_6": {		
+			"type": "recording",
+			"transcript": "Como? Não te ouvi bem.",
+			"id": "ID_18_6"
+		}		
+	},
+	"numbers_audios": {
+		"ID_N_0": {
+			"type": "recording",
+			"transcript": "0",
+			"id": "ID_N_0"
+		},
+		"ID_N_1": {
+			"type": "recording",
+			"transcript": "1",
+			"id": "ID_N_1"
+		},
+		"ID_N_2": {
+			"type": "recording",
+			"transcript": "2",
+			"id": "ID_N_2"
+		},
+		"ID_N_11": {
+			"type": "recording",
+			"transcript": "11",
+			"id": "ID_N_11"
+		},
+		"ID_N_12": {
+			"type": "recording",
+			"transcript": "12",
+			"id": "ID_N_12"
+		},
+		"ID_N_2000": {
+			"type": "recording",
+			"transcript": "2000",
+			"id": "ID_N_2000"
+		}
+	}
+}
