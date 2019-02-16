@@ -37,21 +37,41 @@ class InputFile extends Component {
       });
   };
 
+  // render() {
+  //   return (
+  //     <div className="App">
+  //       <input
+  //         type="file"
+  //         name=""
+  //         id="file"
+  //         onChange={event => this.handleselectedFile(event)}
+  //       />
+  //       <button onClick={this.handleUpload}>Upload</button>
+  //       <div> {Math.round(this.state.loaded, 2)} %</div>
+  //     </div>
+  //   );
+  // }
+
   render() {
     return (
-      <div className="App">
-        <input
-          type="file"
-          name=""
-          id="file"
-          onChange={event => this.handleselectedFile(event)}
-        />
-        <button onClick={this.handleUpload}>Upload</button>
-        <div> {Math.round(this.state.loaded, 2)} %</div>
+      <div>
+        <FormGroup row>
+          <Col md="3">
+            <Label htmlFor="textarea-input">Textarea</Label>
+          </Col>
+          <Col xs="12" md="9">
+            <Input
+              type="textarea"
+              name="textarea-input"
+              id="textarea-input"
+              rows="9"
+              placeholder="Content..."
+            />
+          </Col>
+        </FormGroup>
       </div>
     );
   }
 }
 
 export default InputFile;
-

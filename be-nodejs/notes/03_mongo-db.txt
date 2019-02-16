@@ -1,0 +1,2 @@
+ler o livro
+NoSql Distiled - Martin Fowler
