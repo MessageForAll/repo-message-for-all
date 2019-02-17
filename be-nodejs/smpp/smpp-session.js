@@ -7,7 +7,6 @@ const inputData = {
   DESTINATION_NUMBER: "5521994309366",
   SHORT_MESSAGE_TEXT: "Hello!"
 };
-console.log("oi");
 var session = smpp.connect(inputData.URL);
 
 session.bind_transceiver(
@@ -38,4 +37,3 @@ session.bind_transceiver(
   }
 );
 
-console.log("tchau");
