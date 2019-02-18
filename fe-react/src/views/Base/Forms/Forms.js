@@ -37,13 +37,19 @@ class Forms extends Component {
       collapse: true,
       fadeIn: true,
       timeout: 300,
-      selectedFile: null,
+      selectedFile: undefined,
+      fileUploadName: "",
       loaded: 0,
       textoParaMarketing: "",
       responseFromApi: {},
-      clientId: 0,
+      clientId: 6578,
       clientName: "Padaria do Manel",
-      fileInputState: false
+      fileInputState: false,
+      radioState: {
+        agenda: false,
+        arquivo: false,
+        individual: false
+      }
     };
     this.baseState = this.state;
   }
@@ -63,7 +69,20 @@ class Forms extends Component {
   };
 
   handleInputFile = e => {
-    this.setState({ selectedFile: e.target.files[0] });
+    e.preventDefault();
+    this.setState({
+      selectedFile: e.target.files[0],
+      fileUploadName: e.target.files[0].name
+    });
+
+    try {
+      console.log(e.target.files[0].name, "-------", this.state);
+    } catch (error) {
+      console.log(
+        "ERROR!!!! e.target.files[0].name nao foi carregado!",
+        e.target.value
+      );
+    }
   };
 
   handlePlaceHolderTextArea = () => {
@@ -72,7 +91,57 @@ class Forms extends Component {
       : this.state.textoParaMarketing;
   };
 
-  handleSubmitForm = () => {
+  handleVisibility = on => {
+    return on ? {} : { visibility: "hidden" };
+  }; //
+
+  handleSelecaoDestino = e => {
+    switch (e.target.value) {
+      case "option1":
+        console.log("Da Agenda", this.state);
+        this.setState({
+          fileInputState: false,
+          radioState: {
+            agenda: true,
+            arquivo: false,
+            individual: false
+          }
+        });
+        this.handleVisibility(this.state.fileInputState);
+        break;
+      case "option2":
+        console.log("Do Arquivo", this.state);
+        this.setState({
+          fileInputState: false,
+          radioState: {
+            agenda: false,
+            arquivo: true,
+            individual: false
+          }
+        });
+        this.setState({ fileInputState: true });
+        this.handleVisibility(this.state.fileInputState);
+        break;
+      case "option3":
+        console.log("Individual", this.state);
+        this.setState({
+          fileInputState: false,
+          radioState: {
+            agenda: false,
+            arquivo: false,
+            individual: true
+          }
+        });
+        this.setState({ fileInputState: false });
+        this.handleVisibility(this.state.fileInputState);
+        break;
+      default:
+        console.log("Nao foi encontrado um valor.");
+    }
+  };
+
+  handleSubmitForm = e => {
+    e.preventDefault();
     if (this.state.selectedFile) {
       let reader = new FileReader();
       reader.readAsText(this.state.selectedFile);
@@ -108,9 +177,14 @@ class Forms extends Component {
               showConfirmButton: false,
               timer: 1500
             });
-          }).then(()=>{
-            this.handleResetForm();
           })
+          .then(() => {
+            console.log("submit", this.state);
+          })
+          .then(() => {
+            this.handleResetForm();
+            this.forceUpdate();
+          });
       };
     } else {
       Swal.fire({
@@ -123,6 +197,7 @@ class Forms extends Component {
 
   handleResetForm = () => {
     this.setState(this.baseState);
+    console.log("reset", this.state);
   };
 
   render() {
@@ -141,6 +216,7 @@ class Forms extends Component {
                   encType="multipart/form-data"
                   className="form-horizontal"
                 >
+                  {/* {Bloco 1: Texto Para Marketing} */}
                   <FormGroup row>
                     <Col md="3">
                       <Label htmlFor="textarea-input">
@@ -155,16 +231,18 @@ class Forms extends Component {
                         rows="9"
                         placeholder="Digite um texto aqui para envio de SMS..."
                         value={this.state.textoParaMarketing}
-                        onChange={e => this.handleTextoParaMarketing(e)} ////////////////////////////////// handleTextoParaMarketing
+                        onChange={e => this.handleTextoParaMarketing(e)}
                       />
                     </Col>
                   </FormGroup>
 
+                  {/* {Bloco 2: Selecao De Destinos} */}
                   <FormGroup row>
                     <Col md="3">
                       <Label>Selecao De Destinos</Label>
                     </Col>
                     <Col md="9">
+                      {/* {Da Agenda} */}
                       <FormGroup check className="radio">
                         <Input
                           className="form-check-input"
@@ -172,6 +250,7 @@ class Forms extends Component {
                           id="radio1"
                           name="radios"
                           value="option1"
+                          checked={this.state.radioState.agenda}
                           onChange={e => this.handleSelecaoDestino(e)}
                         />
                         <Label
@@ -182,14 +261,17 @@ class Forms extends Component {
                           Da Agenda
                         </Label>
                       </FormGroup>
+
+                      {/* {Do arquivo} */}
                       <FormGroup check className="radio">
-                        <Input
+                        <input
                           className="form-check-input"
                           type="radio"
                           id="radio2"
                           name="radios"
                           value="option2"
                           onChange={e => this.handleSelecaoDestino(e)}
+                          checked={this.state.radioState.arquivo}
                         />
                         <Label
                           check
@@ -199,6 +281,8 @@ class Forms extends Component {
                           Do Arquivo
                         </Label>
                       </FormGroup>
+
+                      {/* {Individual R$0,20} */}
                       <FormGroup check className="radio">
                         <Input
                           className="form-check-input"
@@ -207,6 +291,7 @@ class Forms extends Component {
                           name="radios"
                           value="option3"
                           onChange={e => this.handleSelecaoDestino(e)}
+                          checked={this.state.radioState.individual}
                         />
                         <Label
                           check
@@ -219,6 +304,7 @@ class Forms extends Component {
                     </Col>
                   </FormGroup>
 
+                  {/* {Bloco 3: Listagem De Numeros De Destinos} */}
                   <FormGroup
                     row
                     style={this.handleVisibility(this.state.fileInputState)}
@@ -239,19 +325,26 @@ class Forms extends Component {
                   </FormGroup>
                 </Form>
               </CardBody>
+
+              {/* {Bloco 4: Rodape Botoes Submit e Reset} */}
               <CardFooter>
                 <Button
                   type="submit"
                   size="sm"
                   color="primary"
-                  onClick={this.handleSubmitForm}
+                  htmlFor="file-input"
+                  onClick={e => {
+                    this.handleSubmitForm(e);
+                  }}
                 >
                   <i className="fa fa-dot-circle-o" /> Submit
                 </Button>
+
                 <Button
                   type="reset"
                   size="sm"
                   color="danger"
+                  htmlFor="file-input"
                   onClick={e => this.handleResetForm(e)}
                 >
                   <i className="fa fa-ban" /> Reset
@@ -263,32 +356,6 @@ class Forms extends Component {
       </div>
     );
   }
-
-  handleSelecaoDestino = e => {
-    switch (e.target.value) {
-      case "option1":
-        console.log("Da Agenda");
-        this.setState({ fileInputState: false });
-        this.handleVisibility(this.state.fileInputState);
-        break;
-      case "option2":
-        console.log("Do Arquivo");
-        this.setState({ fileInputState: true });
-        this.handleVisibility(this.state.fileInputState);
-        break;
-      case "option3":
-        console.log("Individual");
-        this.setState({ fileInputState: false });
-        this.handleVisibility(this.state.fileInputState);
-        break;
-      default:
-        console.log("Nao foi encontrado um valor.");
-    }
-  };
-
-  handleVisibility = on => {
-    return on ? {} : { visibility: "hidden" };
-  };
 }
 
 export default Forms;

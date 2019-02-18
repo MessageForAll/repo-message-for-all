@@ -1,4 +1,4 @@
 .DS_Store
-be-nodejs/formEnvioSmsOfClientId_*.txt
+be-nodejs/temp/formEnvioSmsOfClientId_*.txt
 fe-react/node_modules/.cache/babel-loader/*.json
 temp/*
