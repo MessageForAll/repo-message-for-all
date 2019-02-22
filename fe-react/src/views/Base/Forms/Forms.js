@@ -39,6 +39,8 @@ class Forms extends Component {
       timeout: 300,
       selectedFile: undefined,
       fileUploadName: "",
+      fileEventTarget: {},
+      fileState: false,
       loaded: 0,
       textoParaMarketing: "",
       responseFromApi: {},
@@ -68,20 +70,21 @@ class Forms extends Component {
     this.setState({ textoParaMarketing: e.target.value });
   };
 
-  handleInputFile = e => {
-    e.preventDefault();
-    this.setState({
-      selectedFile: e.target.files[0],
-      fileUploadName: e.target.files[0].name
-    });
-
-    try {
-      console.log(e.target.files[0].name, "-------", this.state);
-    } catch (error) {
-      console.log(
-        "ERROR!!!! e.target.files[0].name nao foi carregado!",
-        e.target.value
-      );
+  handleInputFile = (e, fileState) => {
+    if (!fileState) {
+      console.log("Dentro do IF de handleInputFile", this.state);
+      this.setState({
+        selectedFile: e.target.files[0],
+        fileEventTarget: e.target,
+        fileUploadName: e.target.value,
+        fileState: true
+      });
+    } else {
+      console.log("Dentro do Else de handleInputFile", this.state);
+      e.value = "";
+      this.setState({
+        fileUploadName: ""
+      });
     }
   };
 
@@ -93,7 +96,7 @@ class Forms extends Component {
 
   handleVisibility = on => {
     return on ? {} : { visibility: "hidden" };
-  }; //
+  };
 
   handleSelecaoDestino = e => {
     switch (e.target.value) {
@@ -141,7 +144,7 @@ class Forms extends Component {
   };
 
   handleSubmitForm = e => {
-    e.preventDefault();
+    // e.preventDefault();
     if (this.state.selectedFile) {
       let reader = new FileReader();
       reader.readAsText(this.state.selectedFile);
@@ -167,7 +170,7 @@ class Forms extends Component {
         return post(url, formData)
           .then(response => {
             this.setState({ responseFromApi: response.data });
-            console.log(this.state.responseFromApi);
+            // console.log(this.state.responseFromApi);
           })
           .then(() => {
             Swal.fire({
@@ -180,6 +183,20 @@ class Forms extends Component {
           })
           .then(() => {
             console.log("submit", this.state);
+          })
+          .then(() => {
+            Swal.fire({
+              title: "<strong>HTML <u>example</u></strong>",
+              type: "info",
+              html: this.state.responseFromApi,
+              showCloseButton: true,
+              showCancelButton: true,
+              focusConfirm: false,
+              confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
+              confirmButtonAriaLabel: "Thumbs up, great!",
+              cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
+              cancelButtonAriaLabel: "Thumbs down"
+            });
           })
           .then(() => {
             this.handleResetForm();
@@ -196,8 +213,8 @@ class Forms extends Component {
   };
 
   handleResetForm = () => {
+    this.handleInputFile(this.state.fileEventTarget, true);
     this.setState(this.baseState);
-    console.log("reset", this.state);
   };
 
   render() {
@@ -215,6 +232,7 @@ class Forms extends Component {
                   method="post"
                   encType="multipart/form-data"
                   className="form-horizontal"
+                  htmlFor="file-input"
                 >
                   {/* {Bloco 1: Texto Para Marketing} */}
                   <FormGroup row>
@@ -332,7 +350,8 @@ class Forms extends Component {
                   type="submit"
                   size="sm"
                   color="primary"
-                  htmlFor="file-input"
+                  id="file-input"
+                  name="file-input"
                   onClick={e => {
                     this.handleSubmitForm(e);
                   }}
@@ -344,7 +363,8 @@ class Forms extends Component {
                   type="reset"
                   size="sm"
                   color="danger"
-                  htmlFor="file-input"
+                  id="file-input"
+                  name="file-input"
                   onClick={e => this.handleResetForm(e)}
                 >
                   <i className="fa fa-ban" /> Reset

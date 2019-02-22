@@ -55,9 +55,9 @@ exports.post = (req, res, next) => {
 
   console.log(req.body);
 
-  msisdnList.map(destinationNumber => {
-    smppConnection(smscCredential, destinationNumber, fraseologia);
-  });
+  // msisdnList.map(destinationNumber => {
+  //   smppConnection(smscCredential, destinationNumber, fraseologia);
+  // });
 
   fs.writeFile(
     "temp/formEnvioSmsOfClientId_" + clientId.toString() + ".txt",
