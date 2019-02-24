@@ -7,7 +7,6 @@ const smscCredential = {
   systemId: "oemtstipa",
   password: "oemrtz"
 };
-// erer
 
 function smppConnection(smscCredential, destinationNumber, smsText) {
   console.log("Sending message to ", destinationNumber, " ...");

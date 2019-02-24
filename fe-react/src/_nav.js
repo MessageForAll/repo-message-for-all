@@ -1,14 +1,14 @@
 export default {
   items: [
-    // {
-    //   name: 'Dashboard',
-    //   url: '/dashboard',
-    //   icon: 'icon-speedometer',
-    //   badge: {
-    //     variant: 'info',
-    //     text: 'NEW',
-    //   },
-    // },
+    {
+      name: "DASHBOARD",
+      url: "/dashboard",
+      icon: "icon-speedometer"
+      // badge: {
+      //   variant: 'info',
+      //   text: 'NEW',
+      // },
+    },
     // {
     //   title: true,
     //   name: 'Theme',
@@ -37,10 +37,15 @@ export default {
     //   },
     // },
     {
-      name: 'Operacional',
-      url: '/base',
-      icon: 'icon-puzzle',
+      name: "OPERACIONAL", //Operacional
+      url: "/operacional", // url: '/base',
+      icon: "icon-puzzle", // icon: 'icon-puzzle',
       children: [
+        {
+          name: " Clientes",
+          url: "/operacional/clientes",
+          icon: "icon-puzzle"
+        },
         // {
         //   name: 'Breadcrumbs',
         //   url: '/base/breadcrumbs',
@@ -67,10 +72,10 @@ export default {
         //   icon: 'icon-puzzle',
         // },
         {
-          name: 'Envio de SMS',
-          url: '/base/forms',
-          icon: 'icon-puzzle',
-        },
+          name: " Envio de SMS", //name: 'Envio de SMS',
+          url: "/operacional/form-envio-sms", //url: '/base/forms',
+          icon: "icon-puzzle"
+        }
         // {
         //   name: 'Jumbotrons',
         //   url: '/base/jumbotrons',
@@ -121,8 +126,8 @@ export default {
         //   url: '/base/tooltips',
         //   icon: 'icon-puzzle',
         // },
-      ],
-    },
+      ]
+    }
     // {
     //   name: 'Buttons',
     //   url: '/buttons',
@@ -276,5 +281,5 @@ export default {
     //   variant: 'danger',
     //   attributes: { target: '_blank', rel: "noopener" },
     // },
-  ],
+  ]
 };

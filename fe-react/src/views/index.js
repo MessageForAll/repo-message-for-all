@@ -5,6 +5,7 @@ import {
   Collapses,
   Dropdowns,
   Forms,
+  Operacional, /////// Inserido pasta Operacional!
   Jumbotrons,
   ListGroups,
   Navbars,
@@ -59,6 +60,7 @@ export {
   Navbars,
   ListGroups,
   Forms,
+  Operacional, // Inserido pasta operacional!
   Dropdowns,
   Collapses,
   Carousels,

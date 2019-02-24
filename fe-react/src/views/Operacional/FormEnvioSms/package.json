@@ -1,0 +1,6 @@
+{
+  "name": "form-envio-sms",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./FormEnvioSms.js"
+}

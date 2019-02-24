@@ -7,6 +7,7 @@ const Carousels = React.lazy(() => import('./views/Base/Carousels'));
 const Collapses = React.lazy(() => import('./views/Base/Collapses'));
 const Dropdowns = React.lazy(() => import('./views/Base/Dropdowns'));
 const Forms = React.lazy(() => import('./views/Base/Forms'));
+const FormEnvioSms = React.lazy(() => import('./views/Operacional/FormEnvioSms')); // Inserido pasta FormEnvioSMS!
 const Jumbotrons = React.lazy(() => import('./views/Base/Jumbotrons'));
 const ListGroups = React.lazy(() => import('./views/Base/ListGroups'));
 const Navbars = React.lazy(() => import('./views/Base/Navbars'));
@@ -36,6 +37,9 @@ const Typography = React.lazy(() => import('./views/Theme/Typography'));
 const Widgets = React.lazy(() => import('./views/Widgets/Widgets'));
 const Users = React.lazy(() => import('./views/Users/Users'));
 const User = React.lazy(() => import('./views/Users/User'));
+const Clientes = React.lazy(() => import('./views/Operacional/Clientes/Clientes')); // Inserido para Clientes
+const Cliente = React.lazy(() => import('./views/Operacional/Clientes/Cliente')); // Inserido para Cliente
+
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
@@ -47,6 +51,8 @@ const routes = [
   { path: '/base', exact: true, name: 'Base', component: Cards },
   { path: '/base/cards', name: 'Cards', component: Cards },
   { path: '/base/forms', name: 'Forms', component: Forms },
+  // { path: '/operacional', name: 'Operacional', component: FormEnvioSms }, // Inserido rota operacional apontando para o componente FormEnvioSms
+  { path: '/operacional/form-envio-sms', name: 'Envio De SMS', component: FormEnvioSms }, // Inserido rota form-envio-sms!
   { path: '/base/switches', name: 'Switches', component: Switches },
   { path: '/base/tables', name: 'Tables', component: Tables },
   { path: '/base/tabs', name: 'Tabs', component: Tabs },
@@ -80,6 +86,9 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
+  { path: '/operacional/clientes', exact: true, name: 'Clientes', component: Clientes }, // Inserido Rota Clientes
+  { path: '/operacional/clientes/:id', exact: true, name: 'Detalhamento do Cliente', component: Cliente }, // Inserido Rota Cliente
+
 ];
 
 export default routes;
