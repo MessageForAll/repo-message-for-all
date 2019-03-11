@@ -52,7 +52,7 @@ const routes = [
   { path: '/base/cards', name: 'Cards', component: Cards },
   { path: '/base/forms', name: 'Forms', component: Forms },
   // { path: '/operacional', name: 'Operacional', component: FormEnvioSms }, // Inserido rota operacional apontando para o componente FormEnvioSms
-  { path: '/operacional/form-envio-sms', name: 'Envio De SMS', component: FormEnvioSms }, // Inserido rota form-envio-sms!
+  { path: '/operacional/form-envio-sms', exact: true, name: 'Envio De SMS', component: FormEnvioSms }, // Inserido rota form-envio-sms!
   { path: '/base/switches', name: 'Switches', component: Switches },
   { path: '/base/tables', name: 'Tables', component: Tables },
   { path: '/base/tabs', name: 'Tabs', component: Tabs },

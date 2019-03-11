@@ -1,31 +1,23 @@
 import React, { Component } from "react";
+import { BrowserRouter } from "react-router-dom";
 import { post } from "axios";
-import Swal from "sweetalert2";
+import Swal from "sweetalert2"; ////// S maiusculo
+// import withReactContent from 'sweetalert2-react-content';
+import swal from "@sweetalert/with-react"; ///// s minusculo !!!
 import {
-  // Badge,
   Button,
-  // ButtonDropdown,
   Card,
   CardBody,
   CardFooter,
   CardHeader,
   Col,
-  // Collapse,
-  // DropdownItem,
-  // DropdownMenu,
-  // DropdownToggle,
-  // Fade,
   Form,
   FormGroup,
-  // FormText,
-  // FormFeedback,
   Input,
-  // InputGroup,
-  // InputGroupAddon,
-  // InputGroupText,
   Label,
   Row
 } from "reactstrap";
+import Clientes from "../Clientes/Clientes";
 
 class Forms extends Component {
   constructor(props) {
@@ -101,7 +93,7 @@ class Forms extends Component {
   handleSelecaoDestino = e => {
     switch (e.target.value) {
       case "option1":
-        console.log("Da Agenda", this.state);
+        console.log("Da Agenda");
         this.setState({
           fileInputState: false,
           radioState: {
@@ -110,10 +102,30 @@ class Forms extends Component {
             individual: false
           }
         });
+
+        ///////////////////////
+        swal({
+          title: "Listagem de Clientes da Agenda",
+          text: "Selecione um ou mais clientes",
+          width: "800px",
+          height: "800px",
+          content: (
+            <div>
+              <BrowserRouter>
+                <Clientes />
+              </BrowserRouter>
+            </div>
+          ),
+          buttons: {
+            cancel: "Close"
+          }
+        });
+        //////////////////////
+
         this.handleVisibility(this.state.fileInputState);
         break;
       case "option2":
-        console.log("Do Arquivo", this.state);
+        console.log("Do Arquivo");
         this.setState({
           fileInputState: false,
           radioState: {
@@ -126,7 +138,7 @@ class Forms extends Component {
         this.handleVisibility(this.state.fileInputState);
         break;
       case "option3":
-        console.log("Individual", this.state);
+        console.log("Individual");
         this.setState({
           fileInputState: false,
           radioState: {
@@ -183,20 +195,6 @@ class Forms extends Component {
           })
           .then(() => {
             console.log("submit", this.state);
-          })
-          .then(() => {
-            Swal.fire({
-              title: "<strong>HTML <u>example</u></strong>",
-              type: "info",
-              html: this.state.responseFromApi,
-              showCloseButton: true,
-              showCancelButton: true,
-              focusConfirm: false,
-              confirmButtonText: '<i class="fa fa-thumbs-up"></i> Great!',
-              confirmButtonAriaLabel: "Thumbs up, great!",
-              cancelButtonText: '<i class="fa fa-thumbs-down"></i>',
-              cancelButtonAriaLabel: "Thumbs down"
-            });
           })
           .then(() => {
             this.handleResetForm();

@@ -7,7 +7,13 @@ const clientesData = [
     status: "Pending",
     email: "elton.braz@hotmail.com",
     msisdn: "5521994309366",
-    grupo: "Amigos da DES Tecnologia"
+    grupo: "Amigos da DES Tecnologia",
+    rua: "Senador Vergueiro",
+    numeroRua: "10",
+    bairro: "Flamengo",
+    cidade: "Rio de Janeiro",
+    estado: "RJ",
+    pais: "Brasil"
   },
   {
     id: 1,
@@ -17,7 +23,13 @@ const clientesData = [
     status: "Active",
     email: "silas@yahoo.com.br",
     msisdn: "5521988010001",
-    grupo: "Amigos da DES Tecnologia"
+    grupo: "Amigos da DES Tecnologia",
+    rua: "Portela",
+    numeroRua: "10",
+    bairro: "Olaria",
+    cidade: "Rio de Janeiro",
+    estado: "RJ",
+    pais: "Brasil"
   },
   {
     id: 2,
@@ -27,7 +39,13 @@ const clientesData = [
     status: "Banned",
     email: "dlaivison@hotmail.com",
     msisdn: "5531988810976",
-    grupo: "Amigos da DES Tecnologia"
+    grupo: "Amigos da DES Tecnologia",
+    rua: "Cruzeiro",
+    numeroRua: "10",
+    bairro: "Atletico",
+    cidade: "Belo Horizonte",
+    estado: "MG",
+    pais: "Brasil"
   },
   {
     id: 3,
@@ -37,7 +55,13 @@ const clientesData = [
     status: "Inactive",
     email: "example@example.com",
     msisdn: "1345678456",
-    grupo: "Contatos Ficticios"
+    grupo: "Contatos Ficticios",
+    rua: "Marte",
+    numeroRua: "10",
+    bairro: "Saturno",
+    cidade: "Solar",
+    estado: "Sistema",
+    pais: "Galaxia"
   },
   {
     id: 4,
@@ -47,162 +71,62 @@ const clientesData = [
     status: "Pending",
     email: "example2@hotmail.com",
     msisdn: "23214124344",
-    grupo: "Contatos Ficticios"
+    grupo: "Contatos Ficticios",
+    rua: "Polar",
+    numeroRua: "10",
+    bairro: "Artico",
+    cidade: "Nasa",
+    estado: "PA",
+    pais: "Brasil"
+  },
+  {
+    id: 5,
+    name: "Iron Man",
+    registered: "2018/03/01",
+    role: "Member",
+    status: "Pending",
+    email: "ironman@hotmail.com",
+    msisdn: "23214124344",
+    grupo: "Marvel",
+    rua: "Polar",
+    numeroRua: "10",
+    bairro: "Artico",
+    cidade: "Nasa",
+    estado: "PA",
+    pais: "Brasil"
+  },
+  {
+    id: 6,
+    name: "Capita Marvel",
+    registered: "2018/03/01",
+    role: "Member",
+    status: "Pending",
+    email: "example2@hotmail.com",
+    msisdn: "23214124344",
+    grupo: "Marvel",
+    rua: "Polar",
+    numeroRua: "10",
+    bairro: "Artico",
+    cidade: "Nasa",
+    estado: "PA",
+    pais: "Brasil"
+  },
+  {
+    id: 7,
+    name: "Hulk",
+    registered: "2018/03/01",
+    role: "Member",
+    status: "Pending",
+    email: "hulk@hotmail.com",
+    msisdn: "23214124344",
+    grupo: "Marvel",
+    rua: "Polar",
+    numeroRua: "10",
+    bairro: "Artico",
+    cidade: "Nasa",
+    estado: "PA",
+    pais: "Brasil"
   }
-  // {
-  //   id: 5,
-  //   name: "Friderik Dávid",
-  //   registered: "2018/01/21",
-  //   role: "Staff",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 6,
-  //   name: "Yiorgos Avraamu",
-  //   registered: "2018/01/01",
-  //   role: "Member",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 7,
-  //   name: "Avram Tarasios",
-  //   registered: "2018/02/01",
-  //   role: "Staff",
-  //   status: "Banned"
-  // },
-  // {
-  //   id: 8,
-  //   name: "Quintin Ed",
-  //   registered: "2018/02/01",
-  //   role: "Admin",
-  //   status: "Inactive"
-  // },
-  // {
-  //   id: 9,
-  //   name: "Enéas Kwadwo",
-  //   registered: "2018/03/01",
-  //   role: "Member",
-  //   status: "Pending"
-  // },
-  // {
-  //   id: 10,
-  //   name: "Agapetus Tadeáš",
-  //   registered: "2018/01/21",
-  //   role: "Staff",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 11,
-  //   name: "Carwyn Fachtna",
-  //   registered: "2018/01/01",
-  //   role: "Member",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 12,
-  //   name: "Nehemiah Tatius",
-  //   registered: "2018/02/01",
-  //   role: "Staff",
-  //   status: "Banned"
-  // },
-  // {
-  //   id: 13,
-  //   name: "Ebbe Gemariah",
-  //   registered: "2018/02/01",
-  //   role: "Admin",
-  //   status: "Inactive"
-  // },
-  // {
-  //   id: 14,
-  //   name: "Eustorgios Amulius",
-  //   registered: "2018/03/01",
-  //   role: "Member",
-  //   status: "Pending"
-  // },
-  // {
-  //   id: 15,
-  //   name: "Leopold Gáspár",
-  //   registered: "2018/01/21",
-  //   role: "Staff",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 16,
-  //   name: "Pompeius René",
-  //   registered: "2018/01/01",
-  //   role: "Member",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 17,
-  //   name: "Paĉjo Jadon",
-  //   registered: "2018/02/01",
-  //   role: "Staff",
-  //   status: "Banned"
-  // },
-  // {
-  //   id: 18,
-  //   name: "Micheal Mercurius",
-  //   registered: "2018/02/01",
-  //   role: "Admin",
-  //   status: "Inactive"
-  // },
-  // {
-  //   id: 19,
-  //   name: "Ganesha Dubhghall",
-  //   registered: "2018/03/01",
-  //   role: "Member",
-  //   status: "Pending"
-  // },
-  // {
-  //   id: 20,
-  //   name: "Hiroto Šimun",
-  //   registered: "2018/01/21",
-  //   role: "Staff",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 21,
-  //   name: "Vishnu Serghei",
-  //   registered: "2018/01/01",
-  //   role: "Member",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 22,
-  //   name: "Zbyněk Phoibos",
-  //   registered: "2018/02/01",
-  //   role: "Staff",
-  //   status: "Banned"
-  // },
-  // {
-  //   id: 23,
-  //   name: "Einar Randall",
-  //   registered: "2018/02/01",
-  //   role: "Admin",
-  //   status: "Inactive"
-  // },
-  // {
-  //   id: 24,
-  //   name: "Félix Troels",
-  //   registered: "2018/03/21",
-  //   role: "Staff",
-  //   status: "Active"
-  // },
-  // {
-  //   id: 25,
-  //   name: "Aulus Agmundr",
-  //   registered: "2018/01/01",
-  //   role: "Member",
-  //   status: "Pending"
-  // },
-  // {
-  //   id: 42,
-  //   name: "Ford Prefex",
-  //   registered: "2001/05/21",
-  //   role: "Alien",
-  //   status: "Don't panic!"
-  // }
 ];
 
 export default clientesData;

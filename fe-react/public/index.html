@@ -16,7 +16,7 @@
       name="keyword"
       content="Bootstrap,Admin,Template,Open,Source,CSS,SCSS,HTML,RWD,Dashboard,React"
     />
-    <title>Message For All - Template CoreUI for React</title>
+    <title>MessageForAll</title>
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -48,6 +48,7 @@
       // React.js ID
       gtag("config", "UA-118965717-6");
     </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </head>
 
   <!-- BODY options, add following classes to body to change options
@@ -95,33 +96,4 @@
     -->
   </body>
   <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript">
-    $(function() {
-      // Wrap your File input in a wrapper <div>
-      var wrapper = $("<div/>").css({
-        height: 0,
-        width: 0,
-        overflow: "hidden"
-      });
-      var fileInput = $(":file").wrap(wrapper);
-
-      // When your file input changes, update the text for your button
-      fileInput.change(function() {
-        $this = $(this);
-        // If the selection is empty, reset it
-        if ($this.val().length == 0) {
-          $("#file").text("Your Text to Choose a File Here!");
-        } else {
-          $("#file").text($this.val());
-        }
-      });
-
-      // When your fake button is clicked, simulate a click of the file button
-      $("#file")
-        .click(function() {
-          fileInput.click();
-        })
-        .show();
-    });
-  </script>
 </html>

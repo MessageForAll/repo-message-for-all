@@ -5,7 +5,7 @@ import {
   Collapses,
   Dropdowns,
   Forms,
-  Operacional, /////// Inserido pasta Operacional!
+  // Operacional, /////// Inserido pasta Operacional!
   Jumbotrons,
   ListGroups,
   Navbars,
@@ -18,6 +18,8 @@ import {
   Tabs,
   Tooltips,
 } from './Base';
+
+import {Operacional} from './Operacional'
 
 import { ButtonDropdowns, ButtonGroups, Buttons, BrandButtons } from './Buttons';
 import Charts from './Charts';
