@@ -14,6 +14,7 @@ import {
   Input,
   Button
 } from "reactstrap";
+
 import clientesData from "./ClientesData";
 
 class Clientes extends Component {
@@ -68,6 +69,17 @@ class Clientes extends Component {
     return `checkbox-body-${clienteId}`;
   };
 
+  handleDeleteClient = e => {
+    console.log(e.target.id);
+    // this.handleInputFile(this.state.fileEventTarget, true);
+    // this.setState(this.baseState);
+  };
+
+  handleChangeClient = e => {
+    console.log(e.target.id);
+    // this.handleInputFile(this.state.fileEventTarget, true);
+    // this.setState(this.baseState);
+  };
   render() {
     const clienteList = clientesData.filter(cliente => cliente.id < 10); ///////////////////
 
@@ -77,7 +89,7 @@ class Clientes extends Component {
           <Col xl={this.state.tableSize}>
             <Card>
               <CardHeader>
-                <strong>Inline</strong> Form
+                <strong>INCLUSAO DE CLIENTES NA AGENDA</strong>
               </CardHeader>
               <CardBody>
                 <Form action="" method="post" inline>
@@ -121,7 +133,7 @@ class Clientes extends Component {
           <Col xl={this.state.tableSize}>
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify" /> clientes
+                <strong>AGENDA</strong>
                 {/* <small className="text-muted">example</small> */}
               </CardHeader>
               <CardBody>
@@ -149,7 +161,7 @@ class Clientes extends Component {
                       <ClienteRow
                         key={index}
                         cliente={cliente}
-                        onChange={e => this.handleCheckboxBody(cliente.id)}
+                        onChange={()=> this.handleCheckboxBody(cliente.id)}
                         checked={this.state.clientes.checked[cliente.id]} ///////// this.state.clientes.id[id] | this.state.clientes.checked[id]
                         inputId={this.handleInputBodyId(cliente.id)}
                       />
@@ -157,6 +169,29 @@ class Clientes extends Component {
                   </tbody>
                 </Table>
               </CardBody>
+              <CardFooter>
+                <Button
+                  type="submit"
+                  size="sm"
+                  color="info"
+                  id="deleteRow"
+                  name="deleteRow"
+                  onClick={e => this.handleDeleteClient(e)}
+                >
+                  <i className="fa fa-ban" /> Deletar
+                </Button>
+                <strong> </strong>
+                <Button
+                  type="submit"
+                  size="sm"
+                  color="info"
+                  id="changeRow"
+                  name="changeRowRow"
+                  onClick={e => this.handleChangeClient(e)}
+                >
+                  <i className="fa fa-dot-circle-o" /> Modificar
+                </Button>
+              </CardFooter>
             </Card>
           </Col>
         </Row>

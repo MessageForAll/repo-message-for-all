@@ -46,6 +46,11 @@ export default {
           url: "/operacional/clientes",
           icon: "icon-puzzle"
         },
+        {
+          name: " Agenda",
+          url: "/operacional/agenda",
+          icon: "icon-puzzle"
+        },
         // {
         //   name: 'Breadcrumbs',
         //   url: '/base/breadcrumbs',
