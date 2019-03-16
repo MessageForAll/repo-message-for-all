@@ -41,11 +41,11 @@ export default {
       url: "/operacional", // url: '/base',
       icon: "icon-puzzle", // icon: 'icon-puzzle',
       children: [
-        {
-          name: " Clientes",
-          url: "/operacional/clientes",
-          icon: "icon-puzzle"
-        },
+        // {
+        //   name: " Clientes",
+        //   url: "/operacional/clientes",    ///////////////////////
+        //   icon: "icon-puzzle"
+        // },
         {
           name: " Agenda",
           url: "/operacional/agenda",

@@ -40,6 +40,8 @@ const User = React.lazy(() => import('./views/Users/User'));
 const Clientes = React.lazy(() => import('./views/Operacional/Clientes/Clientes')); // Inserido para Clientes
 const Cliente = React.lazy(() => import('./views/Operacional/Clientes/Cliente')); // Inserido para Cliente
 const Agenda = React.lazy(() => import('./views/Operacional/Agenda/Agenda')); // Inserido para Agenda
+const ContatosTable = React.lazy(() => import('./views/Operacional/Agenda/ContatosTable')); // Inserido para Agenda
+const Contato = React.lazy(()=> import('./views/Operacional/Agenda/Contato'));
 
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
@@ -90,6 +92,10 @@ const routes = [
   { path: '/operacional/clientes', exact: true, name: 'Clientes', component: Clientes }, // Inserido Rota Clientes
   { path: '/operacional/clientes/:id', exact: true, name: 'Detalhamento do Cliente', component: Cliente }, // Inserido Rota Cliente
   { path: '/operacional/agenda', exact: true, name: 'Agenda', component: Agenda }, // Inserido Rota Agenda
+  { path: '/operacional/agenda/:id', exact: true, name: 'Detalhamento do Contato', component: Contato }, // Inserido Rota Cliente
+  { path: '/operacional/agenda', exact: true, name: 'Agenda', component: ContatosTable }, // Inserido Rota Agenda
+
+
 
 
 ];

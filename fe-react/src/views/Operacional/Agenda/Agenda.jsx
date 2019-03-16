@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
-import AgendaInput from "./AgendaInput";
-import AgendaTable from "./AgendaTable";
-import clientesData from "./ClientesData";
+import ContatoInput from "./ContatoInput";
+import ContatosTable from "./ContatosTable";
+import contatosBase from "./ContatosBase";
 
 class Agenda extends Component {
   state = {
@@ -14,35 +14,35 @@ class Agenda extends Component {
       "Numero"
     ],
     checkboxHeader: false,
-    clientes: {
-      checked: clientesData.map(() => {
+    contatos: {
+      checked: contatosBase.map(() => {
         return false;
       })
     }
   };
 
   handleCheckboxHeader = e => {
-    let listTrue = this.state.clientes.checked.map(() => {
+    let listTrue = this.state.contatos.checked.map(() => {
       return true;
     });
-    let listFalse = this.state.clientes.checked.map(() => {
+    let listFalse = this.state.contatos.checked.map(() => {
       return false;
     });
 
     if (e.target.checked) {
-      this.setState({ checkboxHeader: true, clientes: { checked: listTrue } });
+      this.setState({ checkboxHeader: true, contatos: { checked: listTrue } });
     } else {
       this.setState({
         checkboxHeader: false,
-        clientes: { checked: listFalse }
+        contatos: { checked: listFalse }
       });
     }
   };
-  handleChangeRowBody = clienteId => {
-    let list = this.state.clientes.checked;
-    list[clienteId] = !list[clienteId];
-    this.setState({ clientes: { checked: list } });
-    // this.handleCheckboxRowBody(clienteId);
+  handleChangeRowBody = contatoId => {
+    let list = this.state.contatos.checked;
+    list[contatoId] = !list[contatoId];
+    this.setState({ contatos: { checked: list } });
+    // this.handleCheckboxRowBody(contatoId);
 
     let isFalse = list.reduce((acc, i) => {
       return acc && i;
@@ -54,12 +54,12 @@ class Agenda extends Component {
     }
   };
 
-  handleCheckboxRowBody = clienteId => {
-    return this.state.clientes.checked[clienteId];
+  handleCheckboxRowBody = contatoId => {
+    return this.state.contatos.checked[contatoId];
   };
 
-  handleInputBodyId = clienteId => {
-    return `checkbox-body-${clienteId}`;
+  handleInputBodyId = contatoId => {
+    return `checkbox-body-${contatoId}`;
   };
   handleDeleteClient = e => {
     console.log(e.target.id);
@@ -77,16 +77,16 @@ class Agenda extends Component {
       <div className="animated fadeIn">
         <Row>
           <Col>
-            <AgendaInput />
+            <ContatoInput />
           </Col>
         </Row>
         <Row>
           <Col>
-            <AgendaTable
-              clientes={clientesData}
-              onChange={clienteId => this.handleChangeRowBody(clienteId)}
-              checked={clienteId => this.handleCheckboxRowBody(clienteId)}
-              inputId={clienteId => this.handleInputBodyId(clienteId)}
+            <ContatosTable
+              contatos={contatosBase}
+              onChange={contatoId => this.handleChangeRowBody(contatoId)}
+              checked={contatoId => this.handleCheckboxRowBody(contatoId)}
+              inputId={contatoId => this.handleInputBodyId(contatoId)}
             >
               {/* Header - Table */}
               <th scope="col">
@@ -105,7 +105,7 @@ class Agenda extends Component {
                   </th>
                 );
               })}
-            </AgendaTable>
+            </ContatosTable>
           </Col>
         </Row>
       </div>

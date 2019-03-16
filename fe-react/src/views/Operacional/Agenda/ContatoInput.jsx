@@ -12,13 +12,13 @@ import {
   Button
 } from "reactstrap";
 
-class AgendaInput extends Component {
+class ContatoInput extends Component {
   state = {};
   render() {
     return (
       <Card>
         <CardHeader>
-          <strong>INCLUSAO DE CLIENTES NA AGENDA</strong>
+          <strong>INCLUSAO DE CONTATO NA AGENDA</strong>
         </CardHeader>
         <CardBody>
           <Form action="" method="post" inline>
@@ -59,4 +59,4 @@ class AgendaInput extends Component {
   }
 }
 
-export default AgendaInput;
+export default ContatoInput;

@@ -17,12 +17,11 @@ import {
   Label,
   Row
 } from "reactstrap";
-import Clientes from "../Clientes/Clientes";
+import Agenda from "../Agenda/Agenda";
 
 class Forms extends Component {
   constructor(props) {
     super(props);
-
     this.toggle = this.toggle.bind(this);
     this.toggleFade = this.toggleFade.bind(this);
     this.state = {
@@ -112,7 +111,7 @@ class Forms extends Component {
           content: (
             <div>
               <BrowserRouter>
-                <Clientes />
+                <Agenda />
               </BrowserRouter>
             </div>
           ),

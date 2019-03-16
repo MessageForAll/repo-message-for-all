@@ -1,3 +1,7 @@
 .swal-modal {
   width: 1000px;
 }
+
+.swal-content {
+  text-align: left
+}
