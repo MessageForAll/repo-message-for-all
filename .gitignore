@@ -3,3 +3,4 @@ be-nodejs/temp/formEnvioSmsOfClientId_*.txt
 fe-react/node_modules/.cache/babel-loader/*.json
 temp/*
 db-mongodb/*
+fe-react/node_modules/*
