@@ -17,13 +17,15 @@ app.use(cors({ origin: "http://localhost:3000" }));
 const indexRoute = require("./routes/index-route");
 const productRoute = require("./routes/product-route");
 const developerRoute = require("./routes/developer-route");
-const formEnvioSms = require("./routes/form-envio-sms-route")
+const formEnvioSmsRoute = require("./routes/form-envio-sms-route");
+const agendaRoute = require("./routes/agenda-route");
 
 // Link com as rotas
 app.use("/", indexRoute);
 app.use("/products", productRoute);
 app.use("/developers", developerRoute);
-app.use("/form-envio-de-sms",formEnvioSms);
+app.use("/form-envio-sms",formEnvioSmsRoute);
+app.use("/agenda",agendaRoute);
 
 
 module.exports = app;

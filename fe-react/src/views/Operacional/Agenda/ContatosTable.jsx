@@ -1,34 +1,28 @@
 import React, { Component } from "react";
-import { Card, CardBody, CardHeader, Table } from "reactstrap";
+import { Table } from "reactstrap";
 import { Link } from "react-router-dom";
 
 class ContatosTable extends Component {
   render() {
+    const {onChange, checked, inputId, children } = this.props;
     return (
-      <Card>
-        <CardHeader>
-          <strong>CONTATOS</strong>
-        </CardHeader>
-        <CardBody>
-          <Table responsive hover>
-            <thead>
-              <tr>{this.props.children}</tr>
-            </thead>
-            <tbody>
-              {/* {console.log(this.props.checked(1))} */}
-              {this.props.contatos.map((contato, index) => (
-                <ContatoRow
-                  key={index}
-                  contato={contato}
-                  onChange={() => this.props.onChange(contato.id)}
-                  checked={() => this.props.checked(contato.id)}
-                  inputId={() => this.props.inputId(contato.id)}
-                />
-              ))}
-            </tbody>
-          </Table>
-        </CardBody>
-      </Card>
+      <Table responsive hover>
+        <thead>
+          <tr>{children}</tr>
+        </thead>
+        <tbody>
+          {/* {console.log(this.props.checked(1))} */}
+          {this.props.contatos.map((contato, index) => (
+            <ContatoRow
+              key={index}
+              contato={contato}
+              onChange={() => onChange(contato.id)}
+              checked={() => checked(contato.id)}
+              inputId={() => inputId(contato.id)}
+            />
+          ))}
+        </tbody>
+      </Table>
     );
   }
 }

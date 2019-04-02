@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { post } from "axios";
+import contatosBase from "../Agenda/ContatosBase";
 import Swal from "sweetalert2"; ////// S maiusculo
 // import withReactContent from 'sweetalert2-react-content';
 import swal from "@sweetalert/with-react"; ///// s minusculo !!!
@@ -17,7 +18,8 @@ import {
   Label,
   Row
 } from "reactstrap";
-import Agenda from "../Agenda/Agenda";
+// import Agenda from "../Agenda/Agenda";
+import ContatosTableSelection from "../Agenda/ContatosTableSelection";
 
 class Forms extends Component {
   constructor(props) {
@@ -42,7 +44,14 @@ class Forms extends Component {
         agenda: false,
         arquivo: false,
         individual: false
-      }
+      },
+      contatos: {
+        rows: contatosBase,
+        checked: contatosBase.map(() => {
+          return false;
+        })
+      },
+      checkboxHeader: false
     };
     this.baseState = this.state;
   }
@@ -89,6 +98,66 @@ class Forms extends Component {
     return on ? {} : { visibility: "hidden" };
   };
 
+  onChangeBody = contatoId => {
+    console.log("onChangeBody", contatoId);
+    let list = this.state.contatos.checked;
+    list[contatoId] = !list[contatoId];
+    this.setState({ contatos: { checked: list } });
+    // this.handleCheckboxRowBody(contatoId);
+
+    let isFalse = list.reduce((acc, i) => {
+      return acc && i;
+    }, true);
+    if (!isFalse) {
+      this.setState({ checkboxHeader: false }); // Se houve 1 elemento false em list, mudo o this.state.checkboxHeader para false!!
+    } else {
+      this.setState({ checkboxHeader: true });
+    }
+  };
+
+  onCheckedBody = contatoId => {
+    console.log("onCheckedBody", contatoId);
+    
+  };
+
+  inputIdSelection = contatoId => {
+    return `checkbox-body-${contatoId}`;
+  };
+
+  onChangeHeader = e => {
+    console.log("onChangeHeader", e.target.value);
+    let listTrue = this.state.contatos.checked.map(() => {
+      return true;
+    });
+    let listFalse = this.state.contatos.checked.map(() => {
+      return false;
+    });
+
+    if (e.target.value) {
+      this.setState({ 
+        checkboxHeader: true, 
+        contatos: { checked: listTrue } 
+      });
+      // this.onCheckedHeader(e.target.value);
+    } else {
+      this.setState({
+        checkboxHeader: false,
+        contatos: { checked: listFalse }
+      });
+      // this.onCheckedHeader(e.target.value);
+    }
+
+  };
+
+  onCheckedHeader = (statusHeader) => {
+    return statusHeader;
+  };
+
+
+
+
+
+
   handleSelecaoDestino = e => {
     switch (e.target.value) {
       case "option1":
@@ -111,7 +180,25 @@ class Forms extends Component {
           content: (
             <div>
               <BrowserRouter>
-                <Agenda />
+                <ContatosTableSelection
+                  contatos={this.state.contatos}
+
+                  onChangeHeader={statusHeader =>
+                    this.onChangeHeader(statusHeader)
+                  }
+                  onCheckedHeader={this.state.checkboxHeader}
+
+                  onChangeBody={contatoId =>
+                    this.onChangeBody(contatoId)
+                  }
+                  onCheckedBody={onCheckedBody =>
+                    this.onCheckedBody(onCheckedBody)
+                  }
+
+                  inputId={contatoId =>
+                    this.inputIdSelection(contatoId)
+                  }
+                />
               </BrowserRouter>
             </div>
           ),
@@ -176,7 +263,7 @@ class Forms extends Component {
         };
 
         //------> Metodo do indiano com axios!!!
-        const url = "http://localhost:3001/form-envio-de-sms";
+        const url = "http://localhost:3001/form-envio-sms";
         const formData = { jsonDataFormEnvioDeSms: jsonData };
         return post(url, formData)
           .then(response => {

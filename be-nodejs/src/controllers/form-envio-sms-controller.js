@@ -43,7 +43,7 @@ function smppConnection(smscCredential, destinationNumber, smsText) {
   );
 }
 
-exports.post = (req, res, next) => {
+exports.post = (req, res) => {
   //---> Request
   const {
     clientId,
@@ -81,3 +81,5 @@ exports.post = (req, res, next) => {
   res.setHeader("Access-Control-Allow-Credentials", true);
   res.status(200).send("Arquivo Salvo!");
 };
+
+

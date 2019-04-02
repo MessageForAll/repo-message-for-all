@@ -1,75 +1,95 @@
 import React, { Component } from "react";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Card, CardBody, CardHeader } from "reactstrap";
+import axios from "axios";
 import ContatoInput from "./ContatoInput";
-import ContatosTable from "./ContatosTable";
-import contatosBase from "./ContatosBase";
+import ContatosTableVisualization from "./ContatosTableVisualization";
+
+const apiEndPoint = "http://localhost:3001/agenda/contatos";
+// const objFake = {
+//   id: 0,
+//   name: "Zico",
+//   email: "zico@hotmail.com",
+//   msisdn: "5521994309366",
+//   grupo: "Idolos do Flamengo",
+//   rua: "Clarimundo de Melo",
+//   numeroRua: "10",
+//   bairro: "Quintino",
+//   cidade: "Rio de Janeiro",
+//   estado: "RJ",
+//   pais: "Brasil"
+// };
 
 class Agenda extends Component {
   state = {
-    agendaTableHeaderColumns: [
-      "id",
-      "Nome",
-      "Grupo de Contatos",
-      "e-mail",
-      "Numero"
-    ],
-    checkboxHeader: false,
-    contatos: {
-      checked: contatosBase.map(() => {
-        return false;
-      })
+    contatos: [],
+    contato: {
+      id: 100,
+      name: "",
+      group: "",
+      email: "",
+      msisdn: "",
+      address: {
+        rua: "",
+        numeroRua: "",
+        bairro: "",
+        cidade: "",
+        estado: "",
+        pais: ""
+      }
     }
   };
 
-  handleCheckboxHeader = e => {
-    let listTrue = this.state.contatos.checked.map(() => {
-      return true;
-    });
-    let listFalse = this.state.contatos.checked.map(() => {
-      return false;
-    });
+  async componentDidMount() {
+    const { data } = await axios.get(apiEndPoint);
+    this.setState({ contatos: data.contatos });
+  }
 
-    if (e.target.checked) {
-      this.setState({ checkboxHeader: true, contatos: { checked: listTrue } });
-    } else {
-      this.setState({
-        checkboxHeader: false,
-        contatos: { checked: listFalse }
-      });
-    }
-  };
-  handleChangeRowBody = contatoId => {
-    let list = this.state.contatos.checked;
-    list[contatoId] = !list[contatoId];
-    this.setState({ contatos: { checked: list } });
-    // this.handleCheckboxRowBody(contatoId);
+  onAdd = async () => {
+    const resp = await axios.post(apiEndPoint, this.state.contato);
+    const posts = [...resp.data, this.state.contato];
+    // const { data } = await axios.post(apiEndPoint, objFake);
+    // const posts = [data, ...this.state.contatos];
+    // this.setState({ contatos: posts });
 
-    let isFalse = list.reduce((acc, i) => {
-      return acc && i;
-    }, true);
-    if (!isFalse) {
-      this.setState({ checkboxHeader: false }); // Se houve 1 elemento false em list, mudo o this.state.checkboxHeader para false!!
-    } else {
-      this.setState({ checkboxHeader: true });
-    }
+    console.log(posts);
   };
 
-  handleCheckboxRowBody = contatoId => {
-    return this.state.contatos.checked[contatoId];
+  onModify = contato => {
+    let c = { ...contato };
+    console.table("onModify", c);
   };
 
-  handleInputBodyId = contatoId => {
-    return `checkbox-body-${contatoId}`;
+  onDelete = contato => {
+    let newRows = this.state.contatos.filter(row => row.id !== contato.id);
+    this.setState({ contatos: newRows });
   };
-  handleDeleteClient = e => {
-    console.log(e.target.id);
-    // this.handleInputFile(this.state.fileEventTarget, true);
-    // this.setState(this.baseState);
+
+  onInputName = e => {
+    e.preventDefault();
+    let contato = { ...this.state.contato };
+    contato.name = e.target.value;
+    this.setState({ contato });
   };
-  handleChangeClient = e => {
-    console.log(e.target.id);
-    // this.handleInputFile(this.state.fileEventTarget, true);
-    // this.setState(this.baseState);
+
+  onInputGroup = e => {
+    e.preventDefault();
+    let contato = { ...this.state.contato };
+    contato.group = e.target.value;
+    this.setState({ contato });
+  };
+
+  onInputEmail = e => {
+    e.preventDefault();
+    let contato = { ...this.state.contato };
+    contato.email = e.target.value;
+    this.setState({ contato });
+  };
+
+  onInputMsisdn = e => {
+    e.preventDefault();
+    let contato = { ...this.state.contato };
+    contato.msisdn = e.target.value;
+    this.setState({ contato });
   };
 
   render() {
@@ -77,35 +97,30 @@ class Agenda extends Component {
       <div className="animated fadeIn">
         <Row>
           <Col>
-            <ContatoInput />
+            <ContatoInput
+              onAdd={() => this.onAdd()}
+              onInputName={e => this.onInputName(e)}
+              onInputGroup={e => this.onInputGroup(e)}
+              onInputEmail={e => this.onInputEmail(e)}
+              onInputMsisdn={e => this.onInputMsisdn(e)}
+            />
           </Col>
         </Row>
+
         <Row>
           <Col>
-            <ContatosTable
-              contatos={contatosBase}
-              onChange={contatoId => this.handleChangeRowBody(contatoId)}
-              checked={contatoId => this.handleCheckboxRowBody(contatoId)}
-              inputId={contatoId => this.handleInputBodyId(contatoId)}
-            >
-              {/* Header - Table */}
-              <th scope="col">
-                <input
-                  type="checkbox"
-                  name="checkbox-header"
-                  id="checkbox-header"
-                  onChange={e => this.handleCheckboxHeader(e)}
-                  checked={this.state.checkboxHeader}
+            <Card>
+              <CardHeader>
+                <strong>CONTATOS</strong>
+              </CardHeader>
+              <CardBody>
+                <ContatosTableVisualization
+                  contatos={this.state.contatos}
+                  onModify={contato => this.onModify(contato)}
+                  onDelete={contato => this.onDelete(contato)}
                 />
-              </th>
-              {this.state.agendaTableHeaderColumns.map((column, index) => {
-                return (
-                  <th key={index} scope="col">
-                    {column}
-                  </th>
-                );
-              })}
-            </ContatosTable>
+              </CardBody>
+            </Card>
           </Col>
         </Row>
       </div>
